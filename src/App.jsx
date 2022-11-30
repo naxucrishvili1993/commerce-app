@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
@@ -15,7 +16,6 @@ function App() {
 	return (
 		<div className="container">
 			<Header
-				itemCounter={itemCounter}
 				handleClick={() => setShopStatus(false)}
 				handleChange={(e) => {
 					setSearchTerm(e.target.value);
@@ -23,6 +23,7 @@ function App() {
 				openCart={() => {
 					setShopStatus(true);
 				}}
+				itemCounter={itemCounter}
 			/>
 			<div className={shopStatus ? "hidden" : "cards"}>
 				{items
@@ -38,13 +39,16 @@ function App() {
 								itemName={element.name}
 								itemPrice={element.price}
 								key={index}
-								handleClick={(e) => {
+								handleClick={() => {
 									setPriceCounter(priceCounter + element.price);
 									setItemCounter(itemCounter + 1);
-									setTotalPrice(totalPrice + Math.round(element.price));
+									setTotalPrice(
+										totalPrice + Math.round((element.price * 100) / 100),
+									);
 									element.addToCart = true;
 									element.timesAdded++;
 								}}
+								timesAdded={element.timesAdded}
 							/>
 						);
 					})}
@@ -63,14 +67,24 @@ function App() {
 									itemImage={el.image}
 									itemName={el.name}
 									itemPrice={el.price}
-									handleIncrease={() => setTotalPrice(totalPrice + el.price)}
-									handleDecrease={() => setTotalPrice(totalPrice - el.price)}
 									timesAdded={el.timesAdded}
+									handleIncrease={() => {
+										el.timesAdded++;
+										setTotalPrice(totalPrice + el.price);
+									}}
+									handleDecrease={() => {
+										el.timesAdded--;
+										setTotalPrice(totalPrice - el.price);
+									}}
+									handleRemoval={() => {
+										console.log(itemCounter);
+										setItemCounter(itemCounter - 1);
+									}}
 								/>
 							);
 						})}
 					<div className="shop-summary">
-						<h1>Total Price: {Math.round(totalPrice)}$</h1>
+						<h1>Total Price: {Math.round((totalPrice * 100) / 100)}$</h1>
 					</div>
 				</div>
 			)}
