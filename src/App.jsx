@@ -4,6 +4,7 @@ import "./App.css";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import CardForCart from "./components/CardForCart";
+import Sidebar from "./components/Sidebar";
 import items from "./items";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
 	const [priceCounter, setPriceCounter] = useState(0);
 	const [shopStatus, setShopStatus] = useState(false);
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [activeCategory, setActiveCategory] = useState("All");
 
 	return (
 		<div className="container">
@@ -25,8 +27,17 @@ function App() {
 				}}
 				itemCounter={itemCounter}
 			/>
+			<Sidebar
+				handleChange={(e) => {
+					setActiveCategory(e.target.value);
+				}}
+			/>
 			<div className={shopStatus ? "hidden" : "cards"}>
 				{items
+					.filter((el) => {
+						if (el.category === activeCategory.toLowerCase()) return el;
+						else if (activeCategory === "All") return el;
+					})
 					.filter((el) => {
 						if (searchTerm === "") return el;
 						else if (el.name.toLowerCase().includes(searchTerm.toLowerCase()))

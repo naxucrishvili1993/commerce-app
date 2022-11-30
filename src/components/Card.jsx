@@ -6,7 +6,7 @@ const Card = (props) => {
 	return (
 		<div className="card">
 			<img src={props.itemImage} alt="Clothing" className="card-photo" />
-			<h1 className="item-name">{props.itemName}$</h1>
+			<h1 className="item-name">{props.itemName}</h1>
 			<p className="price">{props.itemPrice}$</p>
 			<button
 				className="buy-btn"

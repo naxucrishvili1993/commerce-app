@@ -111,6 +111,10 @@ body {
 .shop-items p {
 }
 
+.sidebar .category-list {
+	list-style-type: none;
+}
+
 @media screen and (min-width: 576px) {
 	.cards {
 		justify-content: space-around;
