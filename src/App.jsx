@@ -27,11 +27,13 @@ function App() {
 				}}
 				itemCounter={itemCounter}
 			/>
-			<Sidebar
-				handleChange={(e) => {
-					setActiveCategory(e.target.value);
-				}}
-			/>
+			{!shopStatus && (
+				<Sidebar
+					handleChange={(e) => {
+						setActiveCategory(e.target.value);
+					}}
+				/>
+			)}
 			<div className={shopStatus ? "hidden" : "cards"}>
 				{items
 					.filter((el) => {

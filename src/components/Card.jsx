@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Card = (props) => {
-	const [btnValue, setBtnValue] = useState("Add To Cart");
-
 	return (
 		<div className="card">
 			<img src={props.itemImage} alt="Clothing" className="card-photo" />
@@ -12,10 +10,9 @@ const Card = (props) => {
 				className="buy-btn"
 				onClick={() => {
 					props.handleClick();
-					if (props.timesAdded > 0) setBtnValue("Added!");
 				}}
 				disabled={props.timesAdded > 0}>
-				{btnValue}
+				<span>Add To Cart</span>
 			</button>
 		</div>
 	);
