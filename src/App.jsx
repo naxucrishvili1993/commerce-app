@@ -31,6 +31,7 @@ function App() {
 				<Sidebar
 					handleChange={(e) => {
 						setActiveCategory(e.target.value);
+						window.scrollTo({ top: 0, behavior: "smooth" });
 					}}
 				/>
 			)}
