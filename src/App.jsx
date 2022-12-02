@@ -18,7 +18,10 @@ function App() {
 	return (
 		<div className="container">
 			<Header
-				handleClick={() => setShopStatus(false)}
+				handleClick={() => {
+					setShopStatus(false);
+					setActiveCategory("All");
+				}}
 				handleChange={(e) => {
 					setSearchTerm(e.target.value);
 				}}
