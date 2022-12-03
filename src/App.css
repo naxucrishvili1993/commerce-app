@@ -43,6 +43,10 @@ body {
 	margin-top: 10px;
 }
 
+.sidebar button.active-btn {
+	background-color: #faab78 !important;
+}
+
 .sidebar button.category-btn {
 	background-color: #fcf9be;
 	border: none;
@@ -57,9 +61,6 @@ body {
 	transition: 0.3s;
 }
 
-.sidebar button.category-btn:focus {
-	background-color: #faab78;
-}
 .sidebar button.category-btn:hover {
 	opacity: 0.8;
 }
