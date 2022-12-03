@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
-	background-color: white;
 	box-sizing: border-box;
 	color: rgb(75, 73, 73);
 	font-family: "Roboto", sans-serif;
@@ -9,6 +8,7 @@ body {
 
 .container {
 	display: flex;
+	flex-direction: column;
 	margin-top: 60px;
 }
 .header {
@@ -22,26 +22,47 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
+	z-index: 1;
 }
 
 .sidebar {
 	box-sizing: border-box;
+	display: block;
 }
 
 .sidebar ul {
-	left: 0;
-	position: fixed;
-	padding-left: 1px;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 10px;
+	justify-content: center;
+	list-style-type: none;
 }
 
 .sidebar ul li {
 	margin-top: 10px;
 }
 
-.sidebar ul input {
-	filter: grayscale(1);
+.sidebar button.category-btn {
+	background-color: #fcf9be;
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	color: rgb(75, 73, 73);
+	cursor: pointer;
+	font-family: "Roboto", sans-serif;
+	font-weight: 700;
+	letter-spacing: 1px;
+	padding: 10px 20px;
+	transition: 0.3s;
 }
 
+.sidebar button.category-btn:focus {
+	background-color: #faab78;
+}
+.sidebar button.category-btn:hover {
+	opacity: 0.8;
+}
 .logo {
 	cursor: pointer;
 	height: 50px;
@@ -85,12 +106,10 @@ body {
 }
 
 .cards {
+	box-sizing: border-box;
 	display: flex;
 	flex-wrap: wrap;
-	column-gap: 20px;
 	justify-content: center;
-	margin-left: 60px;
-
 	padding-top: 80px;
 }
 

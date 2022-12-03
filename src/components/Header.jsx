@@ -6,7 +6,12 @@ const Header = (props) => {
 	return (
 		<div className="header">
 			<img src={Logo} alt="Logo" className="logo" onClick={props.handleClick} />
-			<input type="text" className="search-bar" onChange={props.handleChange} />
+			<input
+				type="text"
+				className="search-bar"
+				placeholder="Search here..."
+				onChange={props.handleChange}
+			/>
 			<div className="shopping-cart-area">
 				<img
 					src={ShoppingLogo}

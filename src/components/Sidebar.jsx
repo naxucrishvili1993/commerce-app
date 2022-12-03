@@ -5,74 +5,60 @@ const Sidebar = (props) => {
 		<div className="sidebar">
 			<ul className="category-list">
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						value="All"
-						id="allRadio"
-						onChange={props.handleChange}
-					/>
-					<label for="allRadio">All</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="All">
+						All
+					</button>
 				</li>
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						value="Shirts"
-						id="shirtsRadio"
-						onChange={props.handleChange}
-					/>
-					<label for="shirtsRadio">Shirts</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="Shirts">
+						Shirts
+					</button>
 				</li>
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						id="jeansRadio"
-						value="Jeans"
-						onChange={props.handleChange}
-					/>
-					<label for="jeansRadio">Jeans</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="Jeans">
+						Jeans
+					</button>
 				</li>
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						id="jacketsRadio"
-						value="Jackets"
-						onChange={props.handleChange}
-					/>
-					<label for="jacketsRadio">Jackets</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="Jackets">
+						Jackets
+					</button>
 				</li>
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						id="pantsRadio"
-						value="Pants"
-						onChange={props.handleChange}
-					/>
-					<label for="pantsRadio">Pants</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="Pants">
+						Pants
+					</button>
 				</li>
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						id="shoesRadio"
-						value="Shoes"
-						onChange={props.handleChange}
-					/>
-					<label for="shoesRadio">Shoes</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="Shoes">
+						Shoes
+					</button>
 				</li>
 				<li>
-					<input
-						type="radio"
-						name="radioItem"
-						id="socksRadio"
-						value="Socks"
-						onChange={props.handleChange}
-					/>
-					<label for="socksRadio">Socks</label>
+					<button
+						className="category-btn"
+						onClick={props.handleChange}
+						value="Socks">
+						Socks
+					</button>
 				</li>
 			</ul>
 		</div>
